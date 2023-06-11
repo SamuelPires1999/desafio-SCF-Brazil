@@ -8,7 +8,7 @@ module.exports = function(req, res){
     const id = req.body.id;
     
     const newUser = {
-        id, name, job
+        id, name, job, role: "USER", count: 0
     }
 
     data.push(newUser)
