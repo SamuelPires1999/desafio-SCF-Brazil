@@ -12,7 +12,13 @@ const getUser = ( req, res, next ) => {
     // Podemos utilizar o metodo find para retornar diretamente o nome pesquisado
     // Este metodo retorna o primeiro item onde dada expressao e verdadeira, no nosso caso, 
     // onde o nome do item e igual ao nome passado na query.
-    return res.send(data.find(item => item.name == name))
+    const target = data.find(item => item.name == name)
+
+    //Incrementando o count como pedido no teste5
+    target.count++
+
+
+    return res.send(target)
 
 };
 
