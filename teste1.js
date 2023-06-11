@@ -1,20 +1,24 @@
-var data =  require("./fakeData");
+const data =  require("./fakeData");
 
 const getUser = ( req, res, next ) => {
-    
-    var name =  req.query.name;
+    const name =  req.query.name;
 
-    for(let i = 0; i < data.length;  i++) {
-        if(i.name == name) {
-            res.send(data[i]);
-        }
-    }
+    // for(let i = 0; i < data.length;  i++) {
+    //     if(i.name == name) {
+    //         res.send(data[i]);
+    //     }
+    // }
+
+    // Podemos utilizar o metodo find para retornar diretamente o nome pesquisado
+    // Este metodo retorna o primeiro item onde dada expressao e verdadeira, no nosso caso, 
+    // onde o nome do item e igual ao nome passado na query.
+    return res.send(data.find(item => item.name == name))
 
 };
 
 const getUsers = ( req, res, next ) => {
     
-    res.send(data);
+    return res.send(data);
     
 };
 
