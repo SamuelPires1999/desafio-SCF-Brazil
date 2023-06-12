@@ -12,7 +12,7 @@ const getUser = ( req, res, next ) => {
         const target = data.find(item => item.name == validated)
     
         if(!target) {
-            return res.send("User not found")
+            return res.status(404).send("User not found")
         }
     
         //Incrementando o count como pedido no teste5
