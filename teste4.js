@@ -26,7 +26,7 @@ module.exports =  function(req, res) {
 
         return res.send(objectToUpdate);
     } catch (error) {
-        return res.json(error)
+        return res.status(400).json(error)
     }
 
 };

@@ -10,6 +10,6 @@ module.exports = function(req, res){
         res.send(`Usuario ${target.name} foi lido ${target.count} vezes`);
 
     } catch (error) {
-        return res.json(error)
+        return res.status(400).json(error)
     }
 };

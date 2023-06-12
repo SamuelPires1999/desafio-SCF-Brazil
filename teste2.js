@@ -16,7 +16,7 @@ module.exports = function(req, res){
         
         return res.send(newUser);
     } catch (error) {
-        res.json(error)
+        res.status(400).json(error)
     }
 
 };

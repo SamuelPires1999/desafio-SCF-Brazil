@@ -21,6 +21,6 @@ module.exports = function(req, res) {
         return res.send("success");
 
     } catch (error) {
-        return res.json(error)
+        return res.status(400).json(error)
     }
 };
